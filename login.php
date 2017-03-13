@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>	</title>
+	<title>Login Rayo Carro</title>
 </head>
 <body>
 	<style>
@@ -52,8 +52,8 @@
 		 name="name"
 		 placeholder="Escriba su usuario"
 		 data-validation="length"
-		 data-validation-length="min4";
-		 ></div>
+		 data-validation-length="min4">
+	</div>
 	<div class="password">
 		<input type="password"
 		name="edad"

@@ -30,10 +30,6 @@
 			}else{
 				echo "no entre";
 			}
-
-
-
-
 		}
 
 	 ?>
