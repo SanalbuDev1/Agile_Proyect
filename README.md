@@ -1,9 +1,8 @@
-# Agile_Proyect
+# Agile_Pro        
 
-------------> Proyecto Agil <---------------
-|     Quienes realizaron este proyecto:    |
-|            Santiago Alvarez              |         
-|            Jhon Edwin Gomez              |
-|            Edisson Bedoya Gomez          |
-|                                          |
---------------------------------------------
+<h3> Quienes realizaron este proyecto</h3>
+<ul>
+  <li>Jhon Edwin Gomez</li>
+  <li>Edisson Bedoya Gomez</li>
+  <li>Santiago Alvarez</li>
+</ul>
