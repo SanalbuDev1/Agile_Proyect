@@ -182,3 +182,61 @@ article form h3{
 	z-index:1;
 	bottom:50px;
 }
+/* Estilo carrito de compras */
+/* Estilo carrito de compras */
+/* Estilo carrito de compras */
+/* Estilo carrito de compras */
+section.compras{
+	border:1px solid white;
+	height:100%;
+	background:white;
+}
+section.compras h1{
+	text-align:center;
+}
+//div.margin{
+	border:1px solid black;
+}
+div.margin h4, p, div.sale{
+	text-align: center;
+}
+div.margin div.sale > h6{
+	display:inline-block;
+	margin-bottom:-20px;
+	padding:5px;
+	width:60px;
+	background:blue;
+	color:white;
+}
+div.margin div.sale2 > h6{
+	background:red;
+}
+div.margin i{
+	display:inline-block;
+	//border:1px solid black;
+	color:gold;
+	margin:0px;
+}
+div.margin i.gray{
+	color:gray;
+}
+div.margin a{
+	padding:8px;
+	width:100%;
+	margin:0px auto;
+	color:white;
+	text-decoration:none;
+	background:black;
+	display:inline-block;
+	border:1px solid black;
+	text-align:center;
+	margin-bottom:10px;
+
+}
+div.margin div.stars{
+	text-align:center;
+}
+
+div.margin div.img{
+	text-align:center;
+}
