@@ -23,32 +23,32 @@
 	<section class="container-fluid">
 		<div class="row">
         <div class="galeria col-md-10">
-			<section class="owl-carousel owl-theme galeria">
+			<!--<section class="owl-carousel owl-theme galeria">
 				<img src="imgs/car1.jpg" height="660px" width="1130px">
 				<img src="imgs/car2.jpg" height="660px" width="1130px">
 				<img src="imgs/car3.jpg" height="660px" width="1130px">
-			</section>
+			</section>-->
             <div class="login">
-                <h4>We can work together <br>
+                <h4>Contact us <br>
                     <span></span>
                 </h4>
-                <h1>Proyecto Agil</h1>
-                <section id="modal">
-                    <article>
-                        <button id="close" class="btn">&times;</button>
-                        <form>
-                        <span id="logo2"></span>
-                        <h3>Sign In</h3>
-                                <input class="write" type="text" placeholder="Nickname"><br>
-                                <input class="write" type="text" placeholder="Password"><br>
-                                <input class="send" type="submit">
-                        </form>
-                    </article>
-                </section>
-                <button id="iniciar">Sign in</button>
+                <div id="map" style="width:600px;height:400px;background:black"></div>
+
+                    <script>
+                        function myMap() {
+                        var mapOptions = {
+                            center: new google.maps.LatLng(51.5, -0.12),
+                            zoom: 10,
+                            mapTypeId: google.maps.MapTypeId.HYBRID
+                        }
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        }
+                    </script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
             </div>
         </div>
-			<script src="js/jquery-3.1.1.js"></script>
+			<!--<script src="js/jquery-3.1.1.js"></script>
 			<script src="js/owl.carousel.min.js"></script>
 			<script>
 				$(document).ready(function(){
@@ -82,11 +82,11 @@
 					    nav: true,
 					    items:1
 					});
-			</script>
+			</script>-->
 			<div class="asd col-sm-6 col-md-2">
 			<div class="icon">
                 <span id="icon"></span>         
-            </div>
+            </div>-->
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
