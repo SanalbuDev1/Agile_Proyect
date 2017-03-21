@@ -9,31 +9,16 @@
   	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!--Start of Zendesk Chat Script-->
-    <script type="text/javascript">
-    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-    $.src="https://v2.zopim.com/?4fOXkI0ayz6aDlIE7b48UKzxDZxutp7W";z.t=+new Date;$.
-    type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-    </script>
-    <!--End of Zendesk Chat Script-->
 </head>
 <body>
 	<section class="container-fluid">
 		<div class="row">
         <div class="galeria col-md-10">
-			<!--<section class="owl-carousel owl-theme galeria">
-				<img src="imgs/car1.jpg" height="660px" width="1130px">
-				<img src="imgs/car2.jpg" height="660px" width="1130px">
-				<img src="imgs/car3.jpg" height="660px" width="1130px">
-			</section>-->
             <div class="login">
-                <h4>Contact us <br>
+                <h4 class="contact">Contact us <br>
                     <span></span>
                 </h4>
                 <div id="map" style="width:600px;height:400px;background:black"></div>
-
                     <script>
                         function myMap() {
                         var mapOptions = {
@@ -48,45 +33,10 @@
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
             </div>
         </div>
-			<!--<script src="js/jquery-3.1.1.js"></script>
-			<script src="js/owl.carousel.min.js"></script>
-			<script>
-				$(document).ready(function(){
-                    $('#modal').hide();
-                    $('#modal article').hide();
-
-                    // //************************//
-
-                    $('#iniciar').click(function(event){
-                    $('#modal').fadeIn('slow', function(){
-                    $('#modal article').show();
-                    $('#modal article').animate({top: '0px'}, 500);
-                        });
-                    });
-
-                    // ********************** //
-
-                    $('#modal article button').click(function(event){
-                    $('#modal article').animate({top: '-1000px'}, 
-                    500, function(){
-                    $(this).hide();
-                    $('#modal').fadeOut('slow');
-                            });
-                        });
-                    });
-
-                    //************************//
-					$('.owl-carousel').owlCarousel({
-						autoplay:true,
-					    loop:true,
-					    nav: true,
-					    items:1
-					});
-			</script>-->
 			<div class="asd col-sm-6 col-md-2">
 			<div class="icon">
                 <span id="icon"></span>         
-            </div>-->
+            </div>
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -191,34 +141,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><i class="fa fa-clock-o"></i>Registro E/S</a>
+                            <a href="maps.html"><i class="fa fa-hand-o-down"></i>Where we are?</a>
                         </h4>
-                    </div>
-                    <div id="collapseFour" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-usd"></span><a href="http://www.jquery2dotnet.com">Sales</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-user"></span><a href="http://www.jquery2dotnet.com">Customers</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-tasks"></span><a href="http://www.jquery2dotnet.com">Products</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://www.jquery2dotnet.com">Shopping Cart</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -226,6 +150,7 @@
 		</div>
 	</section>
 
+    <script src="js/jquery-3.1.1.js"></script>
   	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

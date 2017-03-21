@@ -5,22 +5,21 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/master2.css">
+    <script src="js/chat.js"></script>
 </head>
 <body>
 <section id="first">
 	<div class="logo"></div>
 	  	<h1 class="title">¡Registrate!</h1>
 	  	<hr>
-		<form method="get" action="phpregistro.php">
+		<form method="post" action="phpregistro.php">
 			<input type="text" name="name" placeholder="Name" class="form-control">
-			<input type="text" name="lastname" placeholder="Password" class="form-control">
+			<input type="text" name="lastname" placeholder="Last name" class="form-control">
 			<input type="email" name="email" placeholder="Email" class="form-control">
 			<input type="password" name="password" placeholder="Password" class="form-control">
 			<input type="text" name="city" placeholder="City" class="form-control">
 			<input type="address" name="address" placeholder="Address" class="form-control">
-			<div class="register">
-				<a href="" class="btn btn-success">Registrar</a>
-			</div>
+			<input type="submit" value="Enviar"><input type="reset" value="Reiniciar">
 		</form>
 	</div>
 </section>

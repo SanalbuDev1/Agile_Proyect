@@ -1,4 +1,4 @@
-<?php include('conexionbd.php'); ?>
+<?php include "conexionbd.php";?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,15 +11,7 @@
   	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!--Start of Zendesk Chat Script-->
-    <script type="text/javascript">
-    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-    $.src="https://v2.zopim.com/?4fOXkI0ayz6aDlIE7b48UKzxDZxutp7W";z.t=+new Date;$.
-    type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-    </script>
-    <!--End of Zendesk Chat Script-->
+    <script src="js/chat.js"></script>
 </head>
 <body>
 <?php session_start(); ?>
@@ -37,26 +29,27 @@
                     <span></span>
                 </h4>
                 <h1>Proyecto Agil</h1>
+                <button id="iniciar">Sign in</button>
                 <section id="modal">
                     <article>
                         <button id="close" class="btn">&times;</button>
                         <form method="post">
-                        <span id="logo2"></span>
-                        <h3>Sign In</h3>
-                                <input class="write" name="name" type="text" placeholder="Nickname"><br>
-                                <input class="write" name="password" type="password" placeholder="Password"><br>
-                                <input class="send" type="submit">
+                            <span id="logo2"></span>
+                            <h3>Sign In</h3>
+                            <input class="write" name="name" type="text" placeholder="Nickname"><br>
+                            <input class="write" name="password" type="password" placeholder="Password"><br><a href="registro.html">Sing up here.</a>
+                            <input class="send" type="submit">
                         </form>
                         <?php
                             
                             if($_POST){
 
-                                $name     = mysqli_real_escape_string($con, $_POST['name']);
-                                $password  = mysqli_real_escape_string($con, $_POST['password']);
+                                $name          = mysqli_real_escape_string($con, $_POST['name']);
+                                $password      = mysqli_real_escape_string($con, $_POST['password']);
 
                                 if($name != "" && $password != ""){
 
-                                    $query = mysqli_query($con, "SELECT * FROM agilt WHERE $name = '$name' AND $password = '$password'");
+                                    $query = mysqli_query($con, "SELECT name, password FROM agilt WHERE name = '$name' AND password = '$password'");
 
                                     if(mysqli_num_rows($query) > 0 ){
 
@@ -79,7 +72,6 @@
                     ?>
                     </article>
                 </section>
-                <button id="iniciar">Sign in</button>
             </div>
         </div>
 			<script src="js/jquery-3.1.1.js"></script>
@@ -225,7 +217,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href=""><i class="fa fa-hand-o-down"></i>Where we are?</a>
+                            <a href="maps.html"><i class="fa fa-hand-o-down"></i>Where we are?</a>
                         </h4>
                     </div>
                 </div>
