@@ -1,5 +1,5 @@
 <?php 
 
-	$con = new mysqli('localhost','root','','agil');
+	$con = mysqli_connect('localhost','root','','agil');
 
 	

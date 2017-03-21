@@ -1,5 +1,3 @@
-<?php include('conexionbd.php'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,67 +20,35 @@
     <!--End of Zendesk Chat Script-->
 </head>
 <body>
-<?php session_start(); ?>
-
 	<section class="container-fluid">
 		<div class="row">
         <div class="galeria col-md-10">
-			<section class="owl-carousel owl-theme galeria">
-				<img src="imgs/car1.jpg" height="670px" width="1150px">
-				<img src="imgs/car2.jpg" height="670px" width="1150px">
-				<img src="imgs/car3.jpg" height="670px" width="1150px">
-			</section>
+			<!--<section class="owl-carousel owl-theme galeria">
+				<img src="imgs/car1.jpg" height="660px" width="1130px">
+				<img src="imgs/car2.jpg" height="660px" width="1130px">
+				<img src="imgs/car3.jpg" height="660px" width="1130px">
+			</section>-->
             <div class="login">
-                <h4>We can work together <br>
+                <h4>Contact us <br>
                     <span></span>
                 </h4>
-                <h1>Proyecto Agil</h1>
-                <section id="modal">
-                    <article>
-                        <button id="close" class="btn">&times;</button>
-                        <form method="post">
-                        <span id="logo2"></span>
-                        <h3>Sign In</h3>
-                                <input class="write" name="name" type="text" placeholder="Nickname"><br>
-                                <input class="write" name="password" type="password" placeholder="Password"><br>
-                                <input class="send" type="submit">
-                        </form>
-                        <?php
-                            
-                            if($_POST){
+                <div id="map" style="width:600px;height:400px;background:black"></div>
 
-                                $name     = mysqli_real_escape_string($con, $_POST['name']);
-                                $password  = mysqli_real_escape_string($con, $_POST['password']);
+                    <script>
+                        function myMap() {
+                        var mapOptions = {
+                            center: new google.maps.LatLng(51.5, -0.12),
+                            zoom: 10,
+                            mapTypeId: google.maps.MapTypeId.HYBRID
+                        }
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        }
+                    </script>
 
-                                if($name != "" && $password != ""){
-
-                                    $query = mysqli_query($con, "SELECT * FROM agilt WHERE $name = '$name' AND $password = '$password'");
-
-                                    if(mysqli_num_rows($query) > 0 ){
-
-                                        $row = mysqli_fetch_array($query);
-
-                                        // Variable tipo session //
-                                        session_start();
-                                        $_SESSION['nombre'] = $row['name']." ".$row['lastname'];
-                                        header("location: carrito.html");
-                                    }
-
-                                    else {
-                                        echo "<script>alert('Usurio o clave incorrecta');</script>";
-                                    }
-                                } else {
-                                    echo "<script>alert('Hay campos vacios');</script>";
-                                }
-
-                            }
-                    ?>
-                    </article>
-                </section>
-                <button id="iniciar">Sign in</button>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
             </div>
         </div>
-			<script src="js/jquery-3.1.1.js"></script>
+			<!--<script src="js/jquery-3.1.1.js"></script>
 			<script src="js/owl.carousel.min.js"></script>
 			<script>
 				$(document).ready(function(){
@@ -116,11 +82,11 @@
 					    nav: true,
 					    items:1
 					});
-			</script>
+			</script>-->
 			<div class="asd col-sm-6 col-md-2">
 			<div class="icon">
-                <span id="icon"></span>
-            </div>
+                <span id="icon"></span>         
+            </div>-->
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -225,8 +191,34 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href=""><i class="fa fa-hand-o-down"></i>Where we are?</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><i class="fa fa-clock-o"></i>Registro E/S</a>
                         </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-usd"></span><a href="http://www.jquery2dotnet.com">Sales</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-user"></span><a href="http://www.jquery2dotnet.com">Customers</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-tasks"></span><a href="http://www.jquery2dotnet.com">Products</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-shopping-cart"></span><a href="http://www.jquery2dotnet.com">Shopping Cart</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

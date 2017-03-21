@@ -240,3 +240,6 @@ div.margin div.stars{
 div.margin div.img{
 	text-align:center;
 }
+div.owl-dots{
+	display:none;
+}
