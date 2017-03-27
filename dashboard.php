@@ -1,3 +1,5 @@
+<?php include "conexionbd.php";?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +18,47 @@
 	<section class="container-fluid">
 		<div class="row">
         <div class="fondo col-md-10">
-            
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">¡Bienvenido!</h1>
+                    <hr>
+                    <h2 class="text-center">Sus datos son:</h2>
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-4">
+
+                        </div>
+                         <div class="col-md-7">
+                         <?php 
+
+                            if(isset($_SESSION['nombre'])){
+
+                                $name     = $_SESSION['nombre'];
+
+                                $query = mysqli_query($con, "SELECT * FROM agilt WHERE name = '$name' ");
+
+                                while($row = mysqli_fetch_array($query)){
+                                    echo $row['name'];
+                                    echo $row['lastname'];
+
+                                }
+                            }
+                        
+
+                          ?>
+                            <table border="1" class="difee table">
+                               <tr>
+                                    <td>Nickname</td>
+                                    <td><!--   --></td>
+                               </tr>
+                                <tr>
+                                    <td>Apellido</td>
+                                    <td></td>
+                               </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 			<div class="asd col-sm-6 col-md-2">
 			<div class="icon">
@@ -48,6 +90,11 @@
                             <table class="table">
                                 <tr>
                                     <td>
+                                        <i class="fa fa-database"></i><a href="inventario.html">Inventario</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <i class="fa fa-folder-open-o"></i><a href="carrito.html">Catálogo</a>
                                     </td>
                                 </tr>
@@ -74,8 +121,8 @@
             <br>
             <div class="usuario">
                 <h4>El usuario ingresado es:</h4>
-                <li id="perr"><?php echo $_SESSION['nombre'];?></li>
-                <a class="closese" href="cerrar_sesion.php">Cerrar Session</a>
+                <li id="perr"><i class="icon fa fa-user-o"></i><?php echo $_SESSION['nombre'];?></li><br>
+                <a class="closese" href="cerrar_sesion.php"><i class="icon fa fa-window-close-o"></i>Cerrar Session</a>
             </div>
             
         </div>

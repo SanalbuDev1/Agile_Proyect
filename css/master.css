@@ -12,11 +12,11 @@ a{
 	transition:0.2s all;
 }
 a.closese{
-	color:blue;
+	color:white;
 	margin-top:10px;
 }
 a.closese:hover{
-	color:blue;
+	color:#D1B418;
 	text-decoration:none;
 }
 a:hover{
@@ -289,6 +289,7 @@ i.redes:hover{
 }
 div.usuario{
 	margin-top:20px;
+	margin-left:15px;
 }
 div.usuario h4{
 	color:#D1B418;
@@ -300,4 +301,15 @@ div.usuario li#perr{
 }
 div.fondo{
 	background:white;
+}
+i.icon{
+	color:white;
+}
+i.icon:hover{
+	color:#D1B418;
+	transition:0.2s all;
+}
+table.difee tr td{
+	color:black;
+	text-align:center;
 }
