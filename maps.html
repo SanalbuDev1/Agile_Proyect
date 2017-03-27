@@ -14,69 +14,28 @@
 	<section class="container-fluid">
 		<div class="row">
         <div class="galeria col-md-10">
-			<section class="owl-carousel owl-theme galeria">
-				<img src="imgs/car1.jpg" height="660px" width="1130px">
-				<img src="imgs/car2.jpg" height="660px" width="1130px">
-				<img src="imgs/car3.jpg" height="660px" width="1130px">
-			</section>
             <div class="login">
-                <h4>We can work together <br>
+                <h4 class="contact">Contact us <br>
                     <span></span>
                 </h4>
-                <h1>Proyecto Agil</h1>
-                <section id="modal">
-                    <article>
-                        <button id="close" class="btn">&times;</button>
-                        <form>
-                        <span id="logo2"></span>
-                        <h3>Sign In</h3>
-                                <input class="write" type="text" placeholder="Nickname"><br>
-                                <input class="write" type="text" placeholder="Password"><br>
-                                <input class="send" type="submit">
-                        </form>
-                    </article>
-                </section>
-                <button id="iniciar">Sign in</button>
+                <div id="map" style="width:600px;height:400px;background:black"></div>
+                    <script>
+                        function myMap() {
+                        var mapOptions = {
+                            center: new google.maps.LatLng(51.5, -0.12),
+                            zoom: 10,
+                            mapTypeId: google.maps.MapTypeId.HYBRID
+                        }
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        }
+                    </script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
             </div>
         </div>
-			<script src="js/jquery-3.1.1.js"></script>
-			<script src="js/owl.carousel.min.js"></script>
-			<script>
-				$(document).ready(function(){
-                    $('#modal').hide();
-                    $('#modal article').hide();
-
-                    // //************************//
-
-                    $('#iniciar').click(function(event){
-                    $('#modal').fadeIn('slow', function(){
-                    $('#modal article').show();
-                    $('#modal article').animate({top: '0px'}, 500);
-                        });
-                    });
-
-                    // ********************** //
-
-                    $('#modal article button').click(function(event){
-                    $('#modal article').animate({top: '-1000px'}, 
-                    500, function(){
-                    $(this).hide();
-                    $('#modal').fadeOut('slow');
-                            });
-                        });
-                    });
-
-                    //************************//
-					$('.owl-carousel').owlCarousel({
-						autoplay:true,
-					    loop:true,
-					    nav: true,
-					    items:1
-					});
-			</script>
 			<div class="asd col-sm-6 col-md-2">
 			<div class="icon">
-                <span id="icon"></span>     
+                <span id="icon"></span>         
             </div>
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
@@ -123,12 +82,22 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <i class="fa fa-folder-open-o"></i><a href="carrito.html">Catálogo</a>
+                                        <a href="http://www.jquery2dotnet.com">Orders</a> <span class="label label-success">$ 320</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="">Detalles de catálogo</a>
+                                        <a href="http://www.jquery2dotnet.com">Invoices</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Shipments</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.jquery2dotnet.com">Tex</a>
                                     </td>
                                 </tr>
                             </table>
@@ -169,11 +138,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a href="maps.html"><i class="fa fa-hand-o-down"></i>Where we are?</a>
+                        </h4>
+                    </div>
+                </div>
             </div>
         </div>
 		</div>
 	</section>
 
+    <script src="js/jquery-3.1.1.js"></script>
   	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

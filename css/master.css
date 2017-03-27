@@ -7,6 +7,22 @@ section{
 div{
 	//border:1px solid black;
 }
+a{
+	color:#D1B418;
+	transition:0.2s all;
+}
+a.closese{
+	color:blue;
+	margin-top:10px;
+}
+a.closese:hover{
+	color:blue;
+	text-decoration:none;
+}
+a:hover{
+	color:#D1B418;
+	text-decoration:none;
+}
 div.asd{
 	height:660px;
 	background: rgb(0,0,0);
@@ -236,7 +252,52 @@ div.margin a{
 div.margin div.stars{
 	text-align:center;
 }
-
 div.margin div.img{
 	text-align:center;
+}
+div.owl-dots{
+	display:none;
+}
+div.login h4.contact{
+	text-align: center;
+	//border:1px solid white;
+	text-transform:uppercase;
+	font-size:22px;
+	color:white;
+}
+div.login h4 span{
+	border:2px solid white;
+	width:60px;
+	display:inline-block;
+	transition:0.5s all;
+}
+div.login h4:hover > span{
+	border:2px solid white;
+	width:90px;
+	display:inline-block;
+}
+i.redes{
+	//border:1px solid blue;
+	padding:10px;
+	margin-left:8px;
+	border-radius:50%;
+	transition:0.2s all;
+}
+i.redes:hover{
+	background:rgba(255,255,225, 0.2);
+	color:black;
+}
+div.usuario{
+	margin-top:20px;
+}
+div.usuario h4{
+	color:#D1B418;
+	font-size:13px;
+}
+div.usuario li#perr{
+	color:white;
+	list-style:none;
+}
+div.fondo{
+	background:white;
 }

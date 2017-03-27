@@ -8,23 +8,28 @@
 
 	<?php 
 
-		if ($_GET) {
-			$name = $_GET['name'];
-			$password = $_GET['password'];
-			$lastname = $_GET['lastname'];
-			$email = $_GET['email'];
-			$city = $_GET['city'];
-			$address = $_GET['address'];
+		if ($_POST) {
+			$name     = $_POST['name'];
+			$password = $_POST['password'];
+			$lastname = $_POST['lastname'];
+			$email    = $_POST['email'];
+			$city     = $_POST['city'];
+			$address  = $_POST['address'];
 
 			if ($name != "" && $password != "" && $email!= "" && $city!= "" && $address!= "") {
 				
 				$con = mysqli_connect("localhost","root","","Agil");
 				$query = mysqli_query($con , "INSERT INTO agilt VALUES('$name','$password','$lastname','$email','$city','$address','')");
-
 				if ($query) {
-					echo "Se registro correctamente";
+					echo "<script>
+							alert('Se registró correctamente ');
+							window.location.replace('index.php');
+						  </script>";
 				}else{
-					echo "No se registro correctamente";
+					echo "<script>
+							alert('Ocurrió algún problema');
+							window.location.replace('registro.html');
+						  </script>";
 				}
 
 			}else{
