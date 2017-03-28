@@ -9,9 +9,9 @@ body{
 section#first{
 	background-color: #fff;
 	border-radius: 5px;
-	height: 750px;
+	height: 550px;
 	padding: 10px;
-	margin: 10px auto;
+	margin: 30px auto;
 	opacity: 0.9;
 	width: 400px;
 }
@@ -35,8 +35,4 @@ h1.title{
 }
 form input{
 	margin-bottom: 10px;
-}
-form{
-	height: 900px;
-
 }

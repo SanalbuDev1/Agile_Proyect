@@ -8,14 +8,7 @@
 
 	<?php 
 
-		if ($_FILES) {
-			
-			$nimage    = time();
-			$path      = $_FILES['image']['name'];
-			$extension = pathinfo($path, PATHINFO_EXTENSION);
-
-			$image     = 'public/imgs/avatars/'.$nimage.'.'.$extension;
-
+		if ($_POST) {
 			$name     = $_POST['name'];
 			$password = $_POST['password'];
 			$lastname = $_POST['lastname'];
@@ -23,23 +16,25 @@
 			$city     = $_POST['city'];
 			$address  = $_POST['address'];
 
-			if(!empty($_FILES['image']['name'])) {
-							move_uploaded_file($_FILES['image']['tmp_name'], $image);
-							$sql = "INSERT INTO agilt VALUES ('$name', '$password', '$lastname', '$email','$city','$address', DEFAULT , '$image')";
+			if ($name != "" && $password != "" && $email!= "" && $city!= "" && $address!= "") {
+				
+				$con = mysqli_connect("localhost","root","","Agil");
+				$query = mysqli_query($con , "INSERT INTO agilt VALUES('$name','$password','$lastname','$email','$city','$address','')");
+				if ($query) {
+					echo "<script>
+							alert('Se registró correctamente ');
+							window.location.replace('index.php');
+						  </script>";
+				}else{
+					echo "<script>
+							alert('Ocurrió algún problema');
+							window.location.replace('registro.html');
+						  </script>";
+				}
 
-						}else{
-							$sql = "INSERT INTO agilt VALUES ( '$name', '$password', '$lastname', '$email','$city','$address',DEFAULT,'$image')";
+			}else{
+				echo "no entre";
 			}
-
-			$con = mysqli_connect('localhost','root','','agil');
-			if(mysqli_query($con,$sql)){
-							$_SESSION['action'] = 'Add';
-							echo "<script>location.replace('index.php');</script>";
-						} else {
-							echo "no se ha añadido";
-						}
-
-						mysqli_close($con);
 		}
 
 	 ?>

@@ -1,60 +1,43 @@
 <?php include 'public/header.php'; ?>
-<body>
+
 	<section class="container-fluid">
 		<div class="row">
         <div class="fondo col-md-10">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center">¡Bienvenido!</h1>
+                    <h1 class="text-center">Inventario</h1>
                     <hr>
-                    <h2 class="text-center">Usuario: <?php echo $_SESSION['nombre'] ?></h2>
-                    <div class="margin2 row">
-                        <div class="col-md-offset-1 col-md-4">
-                            <img src="imgs/usuario.jpg" class="col-md-12">
-                        </div>
-                         <div class="col-md-7">
-                         <?php 
+                    <h3 class="text-center">Vehiculos actuales</h3>
+                    <button class="col-md-offset-1 btn btn-success btn-default"><i class="fa fa-plus-circle"></i><a class="add" href="">Adicionar</a></button>
+                    <table class="tablevh table table-bordered text-center">
+                    	<tr>
+                    		<td class="title">Marca</td>
+                    		<td class="title">Color</td>
+                    		<td class="title">Capacidad</td>
+                    		<td class="title">CRUD</td>
+                    	</tr>
+                    	<?php
+                    		$query = mysqli_query($con, "SELECT * FROM vehiculos");
 
-                            if(isset($_SESSION['nombre'])){
-
-                                $name     = $_SESSION['nombre'];
-
-                                $query = mysqli_query($con, "SELECT * FROM agilt WHERE name = '$name' ");
-
-                                while($row = mysqli_fetch_array($query)){
-
-                                    echo "  
-                                        <table class='difee table table-condensed'>
-                                           <tr>
-                                                <td class='upper'>Nickname</td>
-                                                <td>".$row['name']."</td>
-                                           </tr>
-                                            <tr>
-                                                <td class='upper asd'>Apellido</td>
-                                                <td class='asd'>".$row['lastname']."</td>
-                                           </tr>
-                                           <tr>
-                                                <td class='upper'>Email</td>
-                                                <td>".$row['email']."</td>
-                                           </tr>
-                                           <tr>
-                                                <td class='upper asd'>Ciudad</td>
-                                                <td class= 'asd'>".$row['city']."</td>
-                                           </tr>
-                                           <tr>
-                                                <td class='upper'>Dirección</td>
-                                                <td>".$row['address']."</td>
-                                           </tr>
-
-                                        </table>
-                                        ";
-                                }
-                            }
-                          ?>    
-                        </div>
-                    </div>
+                    		while($row = mysqli_fetch_array($query)){
+                    			echo "  
+									<tr>
+			                    		<td>".$row['marca']."</td>
+			                    		<td>".$row['color']."</td>
+			                    		<td>".$row['capacidad']."</td>
+			                    		<td>
+											<a href=''><i class='col fa fa-search-plus'></i></a>
+											<a href=''><i class='col fa fa-pencil'></i></a>
+											<a href=''><i class='col fa fa-eraser'></i></a>
+			                    		</td>
+			                    	</tr>
+                    			";
+                    		}
+                    	 ?>
+                    	
+                    </table>
                 </div>
-            </div><br><br><br><br><br><br><br><br>
+            </div>
         </div>
 			<div class="asd col-sm-6 col-md-2">
 			<div class="icon">

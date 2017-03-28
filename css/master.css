@@ -1,9 +1,9 @@
 body{
 	background:black;
 	}
-body.white{
+/*body.white{
 	background:white;
-}
+}*/
 section{
 	//border:1px solid red;
 }
@@ -327,4 +327,29 @@ table.difee tr td.asd{
 }
 div.margin2{
 	margin-top:50px;
+}
+.tablevh>tbody>tr>td, .tablevh>tbody>tr>th, 
+.tablevh>thead>tr>td, .tablevh>thead>tr>th{
+	color:black;
+}
+.tablevh{
+	border:none;
+	margin-top:50px;
+	margin-bottom:100px;
+}
+.tablevh>tbody>tr>td{/*
+	border:1px solid gray;*/
+	border-bottom:1px solid rgba(128,128,128, 0.2);
+	padding:10px;
+	font-size:16px;
+}
+.tablevh>tbody>tr>td.title{
+	font-weight:bolder;
+	color:rgba(0,0,0,0.8);
+	border-bottom:2px solid rgba(128,128,128, 0.2);
+	padding:10px;
+	font-size:16px;
+}
+a.add{
+	color:white;
 }
