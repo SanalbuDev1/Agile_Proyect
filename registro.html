@@ -8,19 +8,65 @@
     <script src="js/chat.js"></script>
 </head>
 <body>
+<style>
+	.foto, img{
+		width: 200px;
+		height: 100px;
+		background:red;
+	}
+
+</style>
 <section id="first">
 	<div class="logo"></div>
 	  	<h1 class="title">¡Registrate!</h1>
 	  	<hr>
-		<form method="post" action="phpregistro.php">
+		<form method="post" action="phpregistro.php" enctype="multipart/form-data">
 			<input type="text" name="name" placeholder="Name" class="form-control">
 			<input type="text" name="lastname" placeholder="Last name" class="form-control">
 			<input type="email" name="email" placeholder="Email" class="form-control">
 			<input type="password" name="password" placeholder="Password" class="form-control">
 			<input type="text" name="city" placeholder="City" class="form-control">
 			<input type="address" name="address" placeholder="Address" class="form-control">
+			
+
+			<div class="Foto">
+						<img id="avatar" src="imgs/clio.jpg">
+						<button type="button" class="btn btn-default bnt-upload">
+							<i class="glyphicon glyphicon-user"></i>
+							Cargar Foto
+						</button>
+						<input style="display:none;" id="upload" type="file" name="image" accept="image/*" data-validation="required">
+			</div>
+
 			<input type="submit" value="Enviar"><input type="reset" value="Reiniciar">
+
 		</form>
+
+		<script src="js/jquery-3.1.1.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#upload').hide();
+			$('.bnt-upload').click(function(){
+				$('#upload').click();
+
+			});
+
+			$('#upload').change(function(event) {
+				previewAvatar();
+			});
+			});
+
+
+		function previewAvatar(){
+			var fr = new FileReader();
+			fr.readAsDataURL(document.getElementById("upload").files[0]);
+			fr.onload = function(frevent){
+				document.getElementById("avatar").src = frevent.target.result;
+			}
+		}
+		</script>
+
+		
 	</div>
 </section>
 </body>

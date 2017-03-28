@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-03-2017 a las 18:20:45
+-- Tiempo de generación: 28-03-2017 a las 18:27:25
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 7.0.13
 
@@ -33,17 +33,20 @@ CREATE TABLE `agilt` (
   `email` varchar(100) NOT NULL,
   `city` varchar(100) NOT NULL,
   `address` varchar(100) NOT NULL,
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `image` varchar(64) NOT NULL DEFAULT 'public/img/avatar.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `agilt`
 --
 
-INSERT INTO `agilt` (`name`, `password`, `lastname`, `email`, `city`, `address`, `id`) VALUES
-('alvarez-ty@hotmail.com', 'llolo1212', 'Alvarez', 'alvarez-ty@hotmail.com', 'manizales', '', 1),
-('alvarez-ty@hotmail.com', 'llolo1212', 'Alvarez', 'alvarez-ty@hotmail.com', 'manizales', '', 2),
-('alvarez-ty@hotmail.com', 'llolo1212', 'Alvarez', 'alvarez-ty@hotmail.com', 'manizales', 'cra', 3);
+INSERT INTO `agilt` (`name`, `password`, `lastname`, `email`, `city`, `address`, `id`, `image`) VALUES
+('alvarez-ty@hotmail.com', 'llolo1212', 'Alvarez', 'alvarez-ty@hotmail.com', 'manizales', '', 1, 'public/img/avatar.png'),
+('alvarez-ty@hotmail.com', 'llolo1212', 'Alvarez', 'alvarez-ty@hotmail.com', 'manizales', '', 2, 'public/img/avatar.png'),
+('alvarez-ty@hotmail.com', 'llolo1212', 'Alvarez', 'alvarez-ty@hotmail.com', 'manizales', 'cra', 3, 'public/img/avatar.png'),
+('Paola', 'llolo1212', 'rios', 'alvarez-ty@hotmail.com', 'manizales', 'alvarez-ty@hotmail.com', 4, 'public/imgs/avatars/1490715893.png'),
+('roberto', 'llolo1212', 'sasa', 'alvarez-ty@hotmail.com', 'asd', 'sd', 5, 'public/imgs/avatars/1490716132.png');
 
 -- --------------------------------------------------------
 
@@ -84,7 +87,7 @@ ALTER TABLE `agilt`
 -- AUTO_INCREMENT de la tabla `agilt`
 --
 ALTER TABLE `agilt`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
