@@ -1,6 +1,9 @@
 body{
 	background:black;
 	}
+body.white{
+	background:white;
+}
 section{
 	//border:1px solid red;
 }
@@ -312,4 +315,16 @@ i.icon:hover{
 table.difee tr td{
 	color:black;
 	text-align:center;
+	border-bottom:1px solid rgba(128,128,128, 0.5);
+}
+table.difee tr td.upper{
+	font-weight:bolder;
+	font-size:17px;
+	color:rgba(0,0,0,0.8);
+}
+table.difee tr td.asd{
+	background:rgba(128,128,128, 0.13);
+}
+div.margin2{
+	margin-top:50px;
 }

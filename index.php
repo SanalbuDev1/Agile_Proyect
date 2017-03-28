@@ -57,7 +57,7 @@
                                         // Variable tipo session //
                                         session_start();
                                         $_SESSION['nombre']        = $row['name'];
-                                        $_SESSION['apellido']      = $row['lastname'];
+                                        $_SESSION['id']            = $row['id'];
                                         header("location: dashboard.php");
                                     }
 

@@ -13,7 +13,7 @@
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="white">
 <?php session_start(); ?>
 	<section class="container-fluid">
 		<div class="row">
@@ -22,10 +22,10 @@
                 <div class="col-md-12">
                     <h1 class="text-center">¡Bienvenido!</h1>
                     <hr>
-                    <h2 class="text-center">Sus datos son:</h2>
-                    <div class="row">
+                    <h2 class="text-center">Usuario: <?php echo $_SESSION['nombre'] ?></h2>
+                    <div class="margin2 row">
                         <div class="col-md-offset-1 col-md-4">
-
+                            <img src="imgs/usuario.jpg" class="col-md-12">
                         </div>
                          <div class="col-md-7">
                          <?php 
@@ -37,24 +37,35 @@
                                 $query = mysqli_query($con, "SELECT * FROM agilt WHERE name = '$name' ");
 
                                 while($row = mysqli_fetch_array($query)){
-                                    echo $row['name'];
-                                    echo $row['lastname'];
 
+                                    echo "  
+                                        <table class='difee table table-condensed'>
+                                           <tr>
+                                                <td class='upper'>Nickname</td>
+                                                <td>".$row['name']."</td>
+                                           </tr>
+                                            <tr>
+                                                <td class='upper asd'>Apellido</td>
+                                                <td class='asd'>".$row['lastname']."</td>
+                                           </tr>
+                                           <tr>
+                                                <td class='upper'>Email</td>
+                                                <td>".$row['email']."</td>
+                                           </tr>
+                                           <tr>
+                                                <td class='upper asd'>Ciudad</td>
+                                                <td class= 'asd'>".$row['city']."</td>
+                                           </tr>
+                                           <tr>
+                                                <td class='upper'>Dirección</td>
+                                                <td>".$row['address']."</td>
+                                           </tr>
+
+                                        </table>
+                                        ";
                                 }
                             }
-                        
-
                           ?>
-                            <table border="1" class="difee table">
-                               <tr>
-                                    <td>Nickname</td>
-                                    <td><!--   --></td>
-                               </tr>
-                                <tr>
-                                    <td>Apellido</td>
-                                    <td></td>
-                               </tr>
-                            </table>
                         </div>
                     </div>
                 </div>
