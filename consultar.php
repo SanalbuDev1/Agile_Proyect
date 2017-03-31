@@ -1,40 +1,44 @@
 <?php include 'public/header.php'; ?>
-
-	<section class="container-fluid">
+<section class="container-fluid">
 		<div class="row">
         <div class="fondo col-md-10">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center">Inventario</h1>
+                <div class="marginbot col-md-12">
+                    <h1 class="text-center">Consultar</h1>
                     <hr>
-                    <h3 class="text-center">Vehiculos actuales</h3>
-                    <button class="col-md-offset-1 btn btn-success btn-default"><i class="fa fa-plus-circle"></i><a class="add" href="adicionar.php">Adicionar</a></button>
+                    <a class="btn btn-success col-md-offset-1" href="inventario.php"><i class="fa fa-arrow-left"></i>Volver</a><br><br>
                     <table class="tablevh table table-bordered text-center">
                     	<tr>
+                    		<td class="title">ID</td>
                     		<td class="title">Marca</td>
                     		<td class="title">Color</td>
                     		<td class="title">Capacidad</td>
-                    		<td class="title">CRUD</td>
+                    		<td class="title">Chasis</td>
+                    		<td class="title">Modelo</td>
                     	</tr>
-                    	<?php
-                    		$query = mysqli_query($con, "SELECT * FROM vehiculos");
+                    <?php 
+
+                    	if($_GET){
+
+                    		$id = $_GET['id'];
+
+                    		$query = mysqli_query($con, "SELECT * FROM vehiculos WHERE id = '$id'");
 
                     		while($row = mysqli_fetch_array($query)){
                     			echo "  
 									<tr>
+			                    		<td>".$row['id']."</td>
 			                    		<td>".$row['marca']."</td>
 			                    		<td>".$row['color']."</td>
 			                    		<td>".$row['capacidad']."</td>
-			                    		<td>
-											<a href='consultar.php?id=".$row['id']."'><i class='col fa fa-search-plus'></i></a>
-											<a href='modificar.php?id=".$row['id']."'><i class='col fa fa-pencil'></i></a>
-											<a href='eliminar.php?id=".$row['id']."'><i class='col fa fa-eraser'></i></a>
-			                    		</td>
+			                    		<td>".$row['chasis']."</td>
+			                    		<td>".$row['modelo']."</td>
 			                    	</tr>
                     			";
                     		}
-                    	 ?>
-                    </table>
+                    	} 
+                    ?>
+                   </table>
                 </div>
             </div>
         </div>
